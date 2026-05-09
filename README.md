@@ -1,4 +1,4 @@
-# Mariana Pagan
+# Pallas Agency
 
 Fullstack monorepo with Bun.
 
@@ -25,7 +25,7 @@ Fullstack monorepo with Bun.
 
 ## WebSockets and PubSub
 
-The boilerplate uses ORPC for both HTTP and WebSocket. The pub/sub system enables realtime events.
+Pallas Agency uses ORPC for both HTTP and WebSocket. The pub/sub system enables realtime events.
 
 ### Publishing events
 
