@@ -35,4 +35,8 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 CLAUDE.md
 .claude
+
+# local business/reference materials used only during development
+.local-instructions
+
 db.sqlite
