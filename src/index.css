@@ -5,15 +5,16 @@
 
 :root {
 	--background: oklch(0.99 0 0);
+	--pallas-logo-gray: #3c4850;
 	--foreground: oklch(0.15 0.02 250);
 	--card: oklch(1 0 0);
 	--card-foreground: oklch(0.15 0.02 250);
 	--popover: oklch(1 0 0);
 	--popover-foreground: oklch(0.15 0.02 250);
 	--primary: oklch(0.3 0.12 250);
-	--primary-foreground: oklch(0.99 0 0);
-	--secondary: oklch(0.96 0.01 250);
-	--secondary-foreground: oklch(0.25 0.08 250);
+	--primary-foreground: oklch(0.98 0.005 250);
+	--secondary: var(--pallas-logo-gray);
+	--secondary-foreground: oklch(0.98 0.005 250);
 	--muted: oklch(0.96 0.01 250);
 	--muted-foreground: oklch(0.5 0.03 250);
 	--accent: oklch(0.55 0.25 290);
@@ -34,7 +35,7 @@
 	--pallas-purple: oklch(0.55 0.25 290);
 	--pallas-purple-light: oklch(0.7 0.18 290);
 	--pallas-navy: oklch(0.18 0.08 250);
-	--pallas-gray: oklch(0.55 0.02 250);
+	--pallas-gray: var(--pallas-logo-gray);
 	--pallas-gray-light: oklch(0.96 0.01 250);
 }
 

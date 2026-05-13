@@ -54,14 +54,14 @@ export function DiagnosticForm() {
 					</>
 				) : (
 					<>
-						Solicitar sessão técnica
+						Solicitar Diagnóstico
 						<ArrowRight size={18} />
 					</>
 				)}
 			</Button>
 
 			<p className="text-center text-xs text-primary-foreground/50">
-				Para operações com investimento relevante em mídia. Retorno em até 24h após análise das informações enviadas.
+				Retorno em até 24h com análise preliminar da sua operação.
 			</p>
 		</form>
 	);

@@ -9,7 +9,6 @@ import {
 	Layers,
 	LineChart,
 	Lock,
-	ShieldCheck,
 	Target,
 	TrendingDown,
 	TrendingUp,
@@ -31,43 +30,31 @@ export const navLinks = [
 ];
 
 export const heroMetrics = [
-	{ label: "Mídia + CRM + Receita", value: "1 fonte", icon: Database, tone: "accent" },
-	{ label: "Decisão por evidência", value: "CAC/LTV", icon: Activity, tone: "primary" },
+	{ label: "Server-Side Events", value: "2.4M", icon: Database, tone: "accent" },
+	{ label: "Incrementality", value: "+34%", icon: Activity, tone: "primary" },
 ];
 
 export const problems: IconCardContent[] = [
 	{
 		icon: Eye,
-		title: "Você escala mídia sem saber o que realmente gerou receita.",
-		description:
-			"Privacidade, bloqueadores e perda de eventos reduzem a visibilidade real da jornada.",
+		title: "Perda de visibilidade pós-iOS 14+",
+		description: "Mudanças de privacidade limitaram drasticamente o tracking tradicional.",
 	},
 	{
 		icon: BarChart3,
-		title: "Cada área defende um número diferente.",
-		description:
-			"Mídia, CRM, analytics e vendas divergem — e decisões de budget viram disputa política.",
+		title: "Discrepâncias entre mídia, CRM e vendas",
+		description: "Dados fragmentados geram decisões baseadas em informações incompletas.",
 	},
 	{
 		icon: TrendingDown,
-		title: "O CAC sobe sem diagnóstico confiável.",
-		description:
-			"Sem mensuração integrada, fica impossível saber se o problema está no canal, no tracking, no criativo ou no funil.",
+		title: "Escala limitada pelo aumento de CAC",
+		description: "Sem mensuração precisa, a alocação de budget se torna ineficiente.",
 	},
 	{
 		icon: Lock,
-		title: "As plataformas otimizam para elas mesmas.",
-		description:
-			"Dados nativos ajudam o algoritmo da plataforma, mas não necessariamente revelam impacto real em receita, margem e LTV.",
+		title: "Dependência excessiva dos dados nativos",
+		description: "Confiar apenas nas plataformas cria um ponto cego estratégico.",
 	},
-];
-
-export const warningSigns = [
-	"Meta Ads mostra crescimento, mas receita não acompanha.",
-	"GA4, CRM e gateway contam conversões diferentes.",
-	"O budget aumenta e o CAC sobe sem explicação confiável.",
-	"Decisões de mídia dependem mais de feeling do que de evidência.",
-	"Ninguém sabe qual canal realmente contribui para LTV.",
 ];
 
 export const methodologySteps = [
@@ -76,10 +63,10 @@ export const methodologySteps = [
 		icon: Database,
 		title: "Data Foundations",
 		items: [
-			"Fonte única de verdade para mídia, CRM e receita.",
-			"Tracking server-side e eventos confiáveis.",
-			"Pipeline de dados preparado para decisão.",
-			"Menos dependência dos relatórios nativos das plataformas.",
+			"Auditoria de tracking",
+			"Conexões server-side",
+			"Data Warehouse proprietário",
+			"Base única de performance",
 		],
 		color: "from-primary to-primary/80",
 	},
@@ -87,12 +74,7 @@ export const methodologySteps = [
 		number: "02",
 		icon: BarChart3,
 		title: "Advanced Measurement",
-		items: [
-			"Modelo de contribuição real por canal.",
-			"Incrementalidade e testes de lift.",
-			"Reconciliação entre mídia, CRM e vendas.",
-			"Leitura integrada de CAC, ROI, margem e LTV.",
-		],
+		items: ["Atribuição", "Incrementalidade", "MMM/MTA", "Reconciliação entre mídia, CRM e vendas"],
 		color: "from-primary/80 to-accent/80",
 	},
 	{
@@ -100,10 +82,10 @@ export const methodologySteps = [
 		icon: Beaker,
 		title: "Scientific Acquisition",
 		items: [
-			"Roadmap de experimentos com hipótese, métrica e decisão.",
-			"Alocação de budget por evidência.",
-			"Escala orientada por sinais confiáveis.",
-			"Menos desperdício entre canais e campanhas.",
+			"Testes estruturados",
+			"Planos de escala",
+			"Alocação por evidência",
+			"Leitura integrada de CAC, ROI e LTV",
 		],
 		color: "from-accent/80 to-accent",
 	},
@@ -112,10 +94,10 @@ export const methodologySteps = [
 		icon: LineChart,
 		title: "CRO & Journey",
 		items: [
-			"Diagnóstico de fricções pós-clique.",
-			"Testes de conversão em páginas e jornadas.",
-			"Mais receita capturada por usuário adquirido.",
-			"Melhoria contínua de eficiência e LTV.",
+			"Diagnóstico de funil",
+			"Testes de conversão",
+			"Otimização de páginas e jornadas",
+			"Aumento de LTV",
 		],
 		color: "from-accent to-primary",
 	},
@@ -126,28 +108,27 @@ export const squadRoles = [
 		icon: Code2,
 		title: "Data Engineers & Fullstack Devs",
 		description:
-			"Implementam tracking server-side, pipelines, integrações com CRM e data warehouse para reduzir dependência das plataformas.",
+			"Construindo integrações, pipelines, tracking server-side e estruturas técnicas confiáveis.",
 		accent: "bg-primary",
 	},
 	{
 		icon: Brain,
 		title: "Data & Marketing Scientists",
-		description:
-			"Estimam impacto real, detectam desperdício e constroem modelos para decisões de budget.",
+		description: "Criando modelos de atribuição, incrementalidade e inteligência de decisão.",
 		accent: "bg-accent",
 	},
 	{
 		icon: Target,
 		title: "Acquisition & CRO Specialists",
 		description:
-			"Transformam evidência em testes, mídia, landing pages e jornadas de conversão.",
+			"Transformando modelos em execução de mídia, experimentos e otimização de conversão.",
 		accent: "bg-primary",
 	},
 	{
 		icon: Layers,
 		title: "Product Managers",
 		description:
-			"Traduzem objetivos comerciais em prioridades técnicas e ciclos de entrega.",
+			"Garantindo alinhamento entre execução técnica, prioridades de negócio e crescimento.",
 		accent: "bg-accent",
 	},
 ];
@@ -168,66 +149,22 @@ export const engagementModels = [
 	{
 		icon: Database,
 		title: "Data Foundations",
-		subtitle: "Base técnica de mensuração",
+		subtitle: "Construção de Base",
 		description:
-			"Para empresas que precisam corrigir tracking, integração e fonte de verdade antes de escalar investimento.",
-		focusLabel: "Você precisa disso se:",
-		focus: [
-			"GA4, CRM, mídia e vendas não batem.",
-			"Seu tracking depende demais do browser.",
-			"Você não confia nos relatórios para decidir budget.",
-			"Não existe uma fonte única de verdade.",
-		],
-		delivery: "Base confiável para mensurar aquisição.",
-		cta: "Avaliar maturidade de dados",
+			"Indicado para empresas que precisam corrigir a base antes de escalar investimento.",
+		focus: ["Auditoria completa", "Server-Side Tracking", "Data Warehouse", "Modelagem inicial"],
+		delivery: "O ativo tecnológico do cliente.",
 		featured: false,
 	},
 	{
 		icon: TrendingUp,
 		title: "Growth Intelligence",
-		subtitle: "Operação contínua de aquisição científica",
+		subtitle: "Operação Contínua",
 		description:
-			"Para empresas com base mínima que querem escalar aquisição com experimentos, modelos e decisões por evidência.",
-		focusLabel: "Você precisa disso se:",
-		focus: [
-			"Você já investe alto e precisa escalar com previsibilidade.",
-			"Quer operar experimentos contínuos.",
-			"Precisa conectar CAC, ROI, LTV e margem.",
-			"Quer reduzir desperdício entre canais.",
-		],
-		delivery: "Ciclo contínuo de decisão, experimento e escala.",
-		cta: "Discutir operação contínua",
+			"Indicado para empresas que já possuem base mínima e precisam operar crescimento continuamente.",
+		focus: ["Gestão de mídia", "Experimentos", "CRO avançado", "Refino de modelos"],
+		delivery: "Escalada de ROI e eficiência operacional.",
 		featured: true,
-	},
-];
-
-export const finalCtaBenefits = [
-	"Mapeamento dos principais pontos de perda de visibilidade.",
-	"Hipóteses iniciais de desperdício e oportunidade.",
-	"Próximos passos para uma operação de mensuração confiável.",
-];
-
-export const contactSignals = [
-	{ label: "Tracking", icon: Database },
-	{ label: "Atribuição", icon: LineChart },
-	{ label: "Governança", icon: ShieldCheck },
-];
-
-export const whyPallasPrinciples = [
-	{
-		label: "Estratégia",
-		description:
-			"Partimos das decisões comerciais que precisam ser defendidas, não de relatórios bonitos.",
-	},
-	{
-		label: "Evidência",
-		description:
-			"Conectamos mídia, CRM e receita para reduzir disputa política e aumentar confiança operacional.",
-	},
-	{
-		label: "Engenharia",
-		description:
-			"Transformamos mensuração em infraestrutura, modelo e rotina de decisão — não em recomendação solta.",
 	},
 ];
 

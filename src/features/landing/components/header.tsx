@@ -52,7 +52,7 @@ export function Header() {
 						asChild
 						className="hidden bg-primary text-primary-foreground hover:bg-primary/90 lg:inline-flex"
 					>
-						<a href="#diagnostico">Solicitar diagnóstico técnico</a>
+						<a href="#diagnostico">Solicitar Diagnóstico</a>
 					</Button>
 
 					<button
@@ -96,7 +96,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
 
 				<Button asChild className="mt-4 w-full bg-primary hover:bg-primary/90">
 					<a href="#diagnostico" onClick={onClose}>
-						Solicitar diagnóstico técnico
+						Solicitar Diagnóstico
 					</a>
 				</Button>
 			</div>

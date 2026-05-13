@@ -1,8 +1,19 @@
 import { motion, useInView } from "framer-motion";
+import { Database, LineChart, ShieldCheck } from "lucide-react";
 import { useRef } from "react";
 
-import { contactSignals, finalCtaBenefits } from "../landing-content";
 import { DiagnosticForm } from "./diagnostic-form";
+
+const benefits = [
+	"Diagnóstico gratuito da sua infraestrutura de dados",
+	"Identificação de oportunidades de mensuração",
+	"Roadmap técnico personalizado",
+];
+const contactSignals = [
+	{ label: "Tracking", icon: Database },
+	{ label: "Mensuração", icon: LineChart },
+	{ label: "Governança", icon: ShieldCheck },
+];
 
 export function CTASection() {
 	const ref = useRef(null);
@@ -20,11 +31,11 @@ export function CTASection() {
 						transition={{ duration: 0.6 }}
 					>
 						<h2 className="mb-6 text-balance text-2xl font-semibold text-primary-foreground sm:text-3xl lg:text-4xl">
-							Descubra onde sua mensuração está vazando eficiência.
+							Pare de adivinhar. Comece a medir.
 						</h2>
 						<p className="mb-8 text-pretty text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
-							Solicite uma sessão técnica para avaliar tracking, atribuição, integração entre
-							mídia, CRM e receita, além de oportunidades de ganho em aquisição.
+							Agende uma conversa técnica com especialistas em MarTech, mensuração e aquisição
+							científica.
 						</p>
 
 						<div className="mb-8 grid gap-3 sm:grid-cols-3">
@@ -51,7 +62,7 @@ export function CTASection() {
 						</div>
 
 						<ul className="space-y-3">
-							{finalCtaBenefits.map((item, index) => (
+							{benefits.map((item, index) => (
 								<motion.li
 									key={item}
 									initial={{ opacity: 0, x: -20 }}

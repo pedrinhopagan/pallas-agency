@@ -19,8 +19,8 @@ export function MethodologySection() {
 					align="center"
 					inView={isInView}
 					eyebrow="Metodologia Pallas"
-					title="Closed-Loop Growth: um sistema para medir, decidir e escalar."
-					description="Unimos engenharia de dados, modelos de mensuração e execução de aquisição em um ciclo contínuo. Cada experimento melhora a base de decisão. Cada decisão melhora a eficiência do próximo investimento."
+					title="O ciclo fechado de crescimento baseado em dados."
+					description="Substituímos decisões baseadas em plataforma, last-click e heurísticas frágeis por uma operação mensurável, testável e escalável."
 				/>
 
 				<DesktopSteps inView={isInView} />
@@ -193,7 +193,7 @@ function ClosedLoop({ inView }: { inView: boolean }) {
 			transition={{ delay: 0.8 }}
 			className="mt-12 text-center lg:mt-16"
 		>
-			<div className="inline-flex items-center gap-3 rounded-full border border-border bg-secondary px-5 py-2.5">
+			<div className="inline-flex items-center gap-3 rounded-full border border-border bg-pallas-gray-light px-5 py-2.5">
 				<div className="size-2 animate-pulse rounded-full bg-accent" />
 				<span className="text-sm font-medium text-foreground">Closed-Loop Growth</span>
 			</div>

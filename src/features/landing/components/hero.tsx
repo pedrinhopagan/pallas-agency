@@ -20,25 +20,18 @@ export function Hero() {
 					>
 						<div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-3 py-1.5">
 							<span className="size-1.5 animate-pulse rounded-full bg-accent" />
-							<span className="text-xs font-medium text-accent">
-								Engineer-First MarTech & Measurement
-							</span>
+							<span className="text-xs font-medium text-accent">Engineer-First MarTech</span>
 						</div>
 
 						<h1 className="text-balance text-3xl font-semibold leading-tight text-foreground sm:text-4xl lg:text-5xl xl:text-6xl">
-							Engenharia de dados e ciência de marketing para escalar aquisição com{" "}
-							<span className="text-gradient-pallas">menos incerteza.</span>
+							Estratégia Preditiva e{" "}
+							<span className="text-gradient-pallas">Engenharia de Dados</span> para Aquisição de
+							Alta Performance.
 						</h1>
 
 						<p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-							Construímos infraestrutura, modelos de mensuração e ciclos de experimentação que
-							conectam mídia, CRM e receita — para transformar investimento em marketing em
-							decisões confiáveis de crescimento.
-						</p>
-
-						<p className="max-w-xl rounded-xl border border-border/70 bg-card/70 p-4 text-sm leading-relaxed text-muted-foreground shadow-lg shadow-primary/5 backdrop-blur">
-							Para operações com investimento relevante em mídia, onde erro de mensuração custa
-							caro demais para ser tratado como detalhe operacional.
+							Da infraestrutura de dados à modelagem de incrementalidade. Transformamos o seu
+							investimento em marketing em uma ciência exata e previsível.
 						</p>
 
 						<div className="flex flex-col gap-4 sm:flex-row">
@@ -48,7 +41,7 @@ export function Hero() {
 								className="h-12 bg-primary px-6 text-primary-foreground hover:bg-primary/90"
 							>
 								<a href="#diagnostico">
-									Solicitar diagnóstico técnico
+									Solicitar Diagnóstico de Dados
 									<ArrowRight size={18} />
 								</a>
 							</Button>
@@ -56,17 +49,17 @@ export function Hero() {
 								asChild
 								variant="outline"
 								size="lg"
-								className="h-12 border-border px-6 hover:bg-secondary"
+								className="h-12 border-border px-6 hover:bg-pallas-gray-light"
 							>
-								<a href="#metodologia">Ver método Closed-Loop</a>
+								<a href="#metodologia">Conhecer metodologia</a>
 							</Button>
 						</div>
 
 						<div className="flex items-center gap-2 pt-4 text-sm text-muted-foreground">
 							<TrendingUp size={16} className="text-accent" />
 							<span>
-								Modelos de atribuição, incrementalidade e eficiência conectados a uma fonte única
-								de verdade.
+								Otimizando mais de <strong className="text-foreground">R$ 50 milhões</strong> em
+								investimento anual em mídia.
 							</span>
 						</div>
 					</motion.div>

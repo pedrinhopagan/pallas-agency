@@ -54,7 +54,7 @@ export function DataVisualization() {
 					</div>
 
 					<div className="space-y-4">
-						<div className="flex h-40 items-end gap-1.5 rounded-lg border border-border/60 bg-secondary/40 p-3 xl:h-44">
+						<div className="flex h-40 items-end gap-1.5 rounded-lg border border-border/60 bg-pallas-gray-light/40 p-3 xl:h-44">
 							{chartBars.map((height, index) => (
 								<motion.div
 									key={`${height}-${index}`}
@@ -90,7 +90,7 @@ export function DataVisualization() {
 							{modelNodes.map((node) => (
 								<span
 									key={node}
-									className="rounded-md border border-border bg-secondary px-3 py-2 text-center text-xs font-medium text-foreground"
+									className="rounded-md border border-border bg-pallas-gray-light px-3 py-2 text-center text-xs font-medium text-foreground"
 								>
 									{node}
 								</span>

@@ -1,11 +1,9 @@
 import { motion, useInView } from "framer-motion";
-import { AlertTriangle, ArrowRight, CheckCircle2 } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 import { useRef } from "react";
 
-import { Button } from "@/components/ui/button";
-
 import { fadeUp, staggerDelay } from "../animation";
-import { problems, warningSigns } from "../landing-content";
+import { problems } from "../landing-content";
 import { SectionHeading } from "./section-heading";
 
 const chartBars = [25, 45, 30, 60, 20, 55, 35, 50, 40, 65, 28, 48];
@@ -39,8 +37,8 @@ export function ProblemSection() {
 							<AlertTriangle size={20} />O Cenário Atual
 						</span>
 					}
-					title="O problema não é falta de dados. É falta de confiança nos dados."
-					description="Plataformas, CRM, analytics e vendas contam histórias diferentes. Quando a operação depende de last-click e dados nativos, o budget passa a ser alocado com viés — e a escala fica mais cara do que deveria."
+					title="O fim dos cookies e a crise de confiança nos dados."
+					description="As plataformas de anúncio estão cegas. Mudanças de privacidade e bloqueios de tracking estão destruindo a confiabilidade da mensuração. Se a sua operação ainda depende de last-click, você provavelmente está tomando decisões com dados incompletos."
 				/>
 
 				<div className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-6">
@@ -78,50 +76,9 @@ export function ProblemSection() {
 					})}
 				</div>
 
-				<WarningSigns inView={isInView} />
 				<BrokenChart inView={isInView} />
 			</div>
 		</section>
-	);
-}
-
-function WarningSigns({ inView }: { inView: boolean }) {
-	return (
-		<motion.div
-			initial={{ opacity: 0, y: 20 }}
-			animate={inView ? { opacity: 1, y: 0 } : {}}
-			transition={{ duration: 0.6, delay: 0.45 }}
-			className="mx-auto mt-12 max-w-4xl rounded-2xl border border-primary-foreground/10 bg-primary-foreground/8 p-6 shadow-2xl shadow-accent/10 backdrop-blur lg:mt-16 lg:p-8"
-		>
-			<div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-center">
-				<div>
-					<p className="mb-3 font-mono text-xs uppercase tracking-[0.24em] text-accent">
-						Sinais de alerta
-					</p>
-					<h3 className="text-balance text-2xl font-semibold text-primary-foreground">
-						Você provavelmente tem um problema de mensuração se:
-					</h3>
-				</div>
-
-				<div className="space-y-4">
-					<ul className="space-y-3">
-						{warningSigns.map((sign) => (
-							<li key={sign} className="flex gap-3 text-sm leading-relaxed text-primary-foreground/75">
-								<CheckCircle2 size={18} className="mt-0.5 shrink-0 text-accent" />
-								<span>{sign}</span>
-							</li>
-						))}
-					</ul>
-
-					<Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-						<a href="#diagnostico">
-							Diagnosticar minha operação
-							<ArrowRight size={16} />
-						</a>
-					</Button>
-				</div>
-			</div>
-		</motion.div>
 	);
 }
 

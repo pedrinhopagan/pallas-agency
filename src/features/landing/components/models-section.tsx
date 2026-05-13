@@ -21,8 +21,8 @@ export function ModelsSection() {
 					align="center"
 					inView={isInView}
 					eyebrow="Modelos de Engajamento"
-					title="Dois caminhos para transformar mensuração em crescimento."
-					description="Começamos pela maturidade real da sua operação: corrigir a base ou operar crescimento contínuo sobre uma base confiável."
+					title="Escolha o modelo ideal para o seu momento."
+					description="Dois caminhos consultivos para empresas em diferentes estágios de maturidade de dados."
 				/>
 
 				<div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:mt-16 lg:grid-cols-2 lg:gap-8">
@@ -89,9 +89,7 @@ function ModelCard({
 			</p>
 
 			<div className="mb-6">
-				<p className={`mb-3 text-xs font-medium uppercase tracking-wider ${mutedText}`}>
-					{model.focusLabel}
-				</p>
+				<p className={`mb-3 text-xs font-medium uppercase tracking-wider ${mutedText}`}>Foco</p>
 				<ul className="space-y-2">
 					{model.focus.map((item) => (
 						<li key={item} className={`flex items-center gap-2 text-sm ${mainText}`}>
@@ -103,7 +101,7 @@ function ModelCard({
 			</div>
 
 			<div
-				className={`mb-6 rounded-lg p-4 ${isFeatured ? "bg-primary-foreground/5" : "bg-secondary"}`}
+				className={`mb-6 rounded-lg p-4 ${isFeatured ? "bg-primary-foreground/5" : "bg-pallas-gray-light"}`}
 			>
 				<p className={`mb-1 text-xs font-medium uppercase tracking-wider ${mutedText}`}>
 					Entrega Principal
@@ -116,7 +114,7 @@ function ModelCard({
 				className={`w-full ${isFeatured ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" : "bg-primary text-primary-foreground hover:bg-primary/90"}`}
 			>
 				<a href="#diagnostico">
-					{model.cta}
+					Saber mais
 					<ArrowRight size={16} />
 				</a>
 			</Button>

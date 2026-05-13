@@ -10,15 +10,15 @@ export function SquadSection() {
 	const isInView = useInView(ref, { once: true, margin: "-100px" });
 
 	return (
-		<section id="squad" className="relative overflow-hidden bg-secondary py-20 lg:py-32">
+		<section id="squad" className="relative overflow-hidden bg-pallas-gray-light py-20 lg:py-32">
 			<TechnicalBackground />
 
 			<div ref={ref} className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<SectionHeading
 					inView={isInView}
 					eyebrow="Diferenciação Técnica"
-					title="Não entregamos apenas relatórios. Entregamos engenharia aplicada ao crescimento."
-					description="Enquanto agências otimizam campanhas dentro das plataformas, a Pallas reconstrói a base técnica que determina se essas campanhas podem ser medidas, comparadas e escaladas com confiança."
+					title="Não entregamos apenas relatórios. Entregamos engenharia."
+					description="A Pallas combina tecnologia, ciência, aquisição e produto em uma operação integrada que entrega resultados mensuráveis e escaláveis."
 				/>
 
 				<div className="relative mt-12 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:gap-6">

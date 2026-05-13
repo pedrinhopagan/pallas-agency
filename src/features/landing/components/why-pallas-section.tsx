@@ -1,15 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-import { whyPallasPrinciples } from "../landing-content";
 import { SectionHeading } from "./section-heading";
+
+const principles = ["Precisão", "Inteligência", "Estratégia"];
 
 export function WhyPallasSection() {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true, margin: "-100px" });
 
 	return (
-		<section id="why-pallas" className="relative overflow-hidden bg-secondary py-20 lg:py-32">
+		<section id="why-pallas" className="relative overflow-hidden bg-pallas-gray-light py-20 lg:py-32">
 			<GeometricBackground inView={isInView} />
 
 			<div ref={ref} className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
@@ -17,7 +18,7 @@ export function WhyPallasSection() {
 					align="center"
 					inView={isInView}
 					eyebrow="Por que Pallas?"
-					title="A estratégia por trás de uma escala que pode ser defendida."
+					title="Estratégia por trás da escala."
 				/>
 
 				<motion.div
@@ -27,27 +28,21 @@ export function WhyPallasSection() {
 					className="space-y-6"
 				>
 					<p className="mx-auto max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-						Na mitologia, Pallas Atena era inteligência estratégica aplicada à decisão. Na Pallas
-						Agency, essa ideia vira método: engenharia, ciência de marketing e aquisição operando
-						sobre a mesma base de evidência.
+						Na mitologia, Pallas Atena era a estratégia por trás da vitória. Na Pallas Agency, somos
+						a inteligência por trás do próximo nível de crescimento da sua operação.
 					</p>
 
-					<div className="grid gap-4 pt-6 text-left sm:grid-cols-3">
-						{whyPallasPrinciples.map((principle, index) => (
+					<div className="flex flex-wrap justify-center gap-6 pt-6">
+						{principles.map((word, index) => (
 							<motion.div
-								key={principle.label}
+								key={word}
 								initial={{ opacity: 0, scale: 0.9 }}
 								animate={isInView ? { opacity: 1, scale: 1 } : {}}
 								transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-								className="rounded-xl border border-border/70 bg-card/70 p-4 shadow-lg shadow-primary/5"
+								className="flex items-center gap-2"
 							>
-								<div className="mb-3 flex items-center gap-2">
-									<span className="size-2 rounded-full bg-accent" />
-									<span className="text-sm font-medium text-foreground">{principle.label}</span>
-								</div>
-								<p className="text-sm leading-relaxed text-muted-foreground">
-									{principle.description}
-								</p>
+								<span className="size-2 rounded-full bg-accent" />
+								<span className="text-sm font-medium text-foreground">{word}</span>
 							</motion.div>
 						))}
 					</div>
@@ -75,7 +70,7 @@ function GeometricBackground({ inView }: { inView: boolean }) {
 	return (
 		<div className="pointer-events-none absolute inset-0 overflow-hidden">
 			<div className="grid-pattern absolute inset-0 opacity-12" />
-			<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--secondary)_72%)]" />
+			<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--pallas-gray-light)_72%)]" />
 			<div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-accent/20 to-transparent" />
 			<div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
 			<svg
