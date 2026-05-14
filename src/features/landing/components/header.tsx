@@ -1,5 +1,3 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -12,22 +10,40 @@ export function Header() {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 	useEffect(() => {
-		function handleScroll() {
-			setIsScrolled(window.scrollY > 20);
+		let lastScrolled = window.scrollY > 20;
+		let ticking = false;
+		setIsScrolled(lastScrolled);
+
+		function updateScrollState() {
+			const nextScrolled = window.scrollY > 20;
+			ticking = false;
+
+			if (nextScrolled === lastScrolled) {
+				return;
+			}
+
+			lastScrolled = nextScrolled;
+			setIsScrolled(nextScrolled);
 		}
 
-		window.addEventListener("scroll", handleScroll);
-		handleScroll();
+		function handleScroll() {
+			if (ticking) {
+				return;
+			}
+
+			ticking = true;
+			window.requestAnimationFrame(updateScrollState);
+		}
+
+		window.addEventListener("scroll", handleScroll, { passive: true });
 
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
 	return (
 		<header
-			className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-				isScrolled
-					? "border-b border-border bg-background/95 shadow-sm backdrop-blur-md"
-					: "bg-transparent"
+			className={`fixed inset-x-0 top-0 z-50 transition-colors duration-200 ${
+				isScrolled ? "border-b border-border bg-background/95 shadow-sm lg:backdrop-blur-md" : "bg-transparent"
 			}`}
 		>
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -61,27 +77,19 @@ export function Header() {
 						onClick={() => setIsMobileMenuOpen((value) => !value)}
 						aria-label="Abrir menu"
 					>
-						{isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+						{isMobileMenuOpen ? "×" : "☰"}
 					</button>
 				</nav>
 			</div>
 
-			<AnimatePresence>
-				{isMobileMenuOpen && <MobileMenu onClose={() => setIsMobileMenuOpen(false)} />}
-			</AnimatePresence>
+			{isMobileMenuOpen && <MobileMenu onClose={() => setIsMobileMenuOpen(false)} />}
 		</header>
 	);
 }
 
 function MobileMenu({ onClose }: { onClose: () => void }) {
 	return (
-		<motion.div
-			initial={{ opacity: 0, height: 0 }}
-			animate={{ opacity: 1, height: "auto" }}
-			exit={{ opacity: 0, height: 0 }}
-			transition={{ duration: 0.2 }}
-			className="border-b border-border bg-background lg:hidden"
-		>
+		<div className="border-b border-border bg-background lg:hidden">
 			<div className="space-y-3 px-4 py-4">
 				{navLinks.map((link) => (
 					<a
@@ -100,6 +108,6 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
 					</a>
 				</Button>
 			</div>
-		</motion.div>
+		</div>
 	);
 }

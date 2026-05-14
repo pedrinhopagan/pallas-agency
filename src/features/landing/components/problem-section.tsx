@@ -1,10 +1,6 @@
-import { motion, useInView } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import { useRef } from "react";
 
-import { fadeUp, staggerDelay } from "../animation";
 import { problems } from "../landing-content";
-import { SectionHeading } from "./section-heading";
 
 const chartBars = [25, 45, 30, 60, 20, 55, 35, 50, 40, 65, 28, 48];
 const fragments = [
@@ -21,117 +17,141 @@ const fragments = [
 ];
 
 export function ProblemSection() {
-	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true, margin: "-100px" });
-
 	return (
-		<section id="problema" className="relative overflow-hidden bg-primary py-20 lg:py-32">
-			<FragmentedDataBackground inView={isInView} />
+		<section
+			id="problema"
+			className="relative isolate overflow-hidden bg-primary pb-20 pt-24 lg:pb-32 lg:pt-32"
+		>
+			<FragmentedDataBackground />
 
-			<div ref={ref} className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-				<SectionHeading
-					inView={isInView}
-					inverse
-					eyebrow={
-						<span className="inline-flex items-center gap-2">
-							<AlertTriangle size={20} />O Cenário Atual
+			<div
+				aria-hidden
+				className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent"
+			/>
+
+			<div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<div className="max-w-3xl">
+					<div className="mb-6 inline-flex items-center gap-3 rounded-full border border-primary-foreground/15 bg-primary-foreground/[0.04] py-1.5 pl-2 pr-4 backdrop-blur-sm">
+						<span className="flex size-5 items-center justify-center rounded-full bg-accent/20 text-accent">
+							<AlertTriangle size={11} />
 						</span>
-					}
-					title="O fim dos cookies e a crise de confiança nos dados."
-					description="As plataformas de anúncio estão cegas. Mudanças de privacidade e bloqueios de tracking estão destruindo a confiabilidade da mensuração. Se a sua operação ainda depende de last-click, você provavelmente está tomando decisões com dados incompletos."
-				/>
+						<span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-foreground/85">
+							O Cenário Atual
+						</span>
+					</div>
 
-				<div className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-6">
+					<h2 className="mb-6 text-balance text-3xl font-medium leading-[1.08] tracking-[-0.02em] text-primary-foreground sm:text-4xl lg:text-[2.8rem]">
+						O fim dos cookies e a{" "}
+						<span className="font-serif text-[1.1em] font-normal italic text-accent">
+							crise de confiança
+						</span>{" "}
+						nos dados.
+					</h2>
+
+					<p className="max-w-2xl text-pretty text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
+						As plataformas de anúncio estão cegas. Mudanças de privacidade e bloqueios de tracking
+						estão destruindo a confiabilidade da mensuração. Se a sua operação ainda depende de
+						last-click, você provavelmente está tomando decisões com dados incompletos.
+					</p>
+				</div>
+
+				<div className="mt-14 grid gap-4 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4 lg:gap-5">
 					{problems.map((problem, index) => {
 						const Icon = problem.icon;
+						const number = String(index + 1).padStart(2, "0");
 
 						return (
-							<motion.div
+							<div
 								key={problem.title}
-								variants={fadeUp}
-								initial="hidden"
-								animate={isInView ? "visible" : "hidden"}
-								transition={{ duration: 0.5, delay: staggerDelay(index) }}
-								className="group relative rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 p-5 backdrop-blur-sm transition-colors hover:bg-primary-foreground/10 lg:p-6"
+								className="group relative overflow-hidden rounded-xl border border-primary-foreground/10 bg-primary-foreground/[0.035] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-primary-foreground/[0.06]"
 							>
-								<div className="flex flex-col gap-4">
-									<div className="flex size-10 items-center justify-center rounded-lg bg-accent/20">
-										<Icon size={20} className="text-accent" />
+								<div
+									aria-hidden
+									className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+								/>
+
+								<div className="mb-5 flex items-center justify-between">
+									<div className="flex size-10 items-center justify-center rounded-lg bg-accent/15 text-accent ring-1 ring-accent/20 transition-colors group-hover:bg-accent/25">
+										<Icon size={18} />
 									</div>
-									<div>
-										<h3 className="mb-2 text-sm font-medium text-primary-foreground">
-											{problem.title}
-										</h3>
-										<p className="text-sm leading-relaxed text-primary-foreground/60">
-											{problem.description}
-										</p>
-									</div>
+									<span className="font-serif text-2xl italic leading-none text-primary-foreground/25 transition-colors group-hover:text-accent/60">
+										{number}
+									</span>
 								</div>
 
-								<div className="absolute right-0 top-0 size-8 overflow-hidden">
-									<div className="absolute right-0 top-0 h-1 w-12 translate-x-3 -translate-y-1 rotate-45 bg-accent/30" />
-								</div>
-							</motion.div>
+								<h3 className="mb-2 text-[15px] font-semibold leading-snug text-primary-foreground">
+									{problem.title}
+								</h3>
+								<p className="text-sm leading-relaxed text-primary-foreground/55">
+									{problem.description}
+								</p>
+
+								<div
+									aria-hidden
+									className="pointer-events-none absolute -bottom-px -right-px size-12 rounded-tl-xl border-l border-t border-accent/0 transition-colors duration-300 group-hover:border-accent/30"
+								/>
+							</div>
 						);
 					})}
 				</div>
 
-				<BrokenChart inView={isInView} />
+				<BrokenChart />
 			</div>
 		</section>
 	);
 }
 
-function FragmentedDataBackground({ inView }: { inView: boolean }) {
+function FragmentedDataBackground() {
 	return (
-		<div className="absolute inset-0 opacity-10">
-			<svg className="size-full" viewBox="0 0 800 600" fill="none" aria-hidden>
-				{fragments.map((fragment, index) => (
-					<motion.rect
-						key={`${fragment.x}-${fragment.y}`}
-						x={fragment.x}
-						y={fragment.y}
-						width={fragment.width}
-						height={3}
-						fill="white"
-						initial={{ opacity: 0 }}
-						animate={inView ? { opacity: fragment.opacity } : { opacity: 0 }}
-						transition={{ delay: index * 0.05 }}
-					/>
-				))}
-			</svg>
-		</div>
+		<>
+			<div
+				aria-hidden
+				className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,oklch(0.4_0.15_280/0.35)_0%,transparent_50%),radial-gradient(circle_at_bottom_right,oklch(0.35_0.12_260/0.3)_0%,transparent_55%)]"
+			/>
+			<div
+				aria-hidden
+				className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:64px_64px]"
+			/>
+			<div aria-hidden className="absolute inset-0 hidden opacity-10 lg:block">
+				<svg className="size-full" viewBox="0 0 800 600" fill="none">
+					{fragments.map((fragment) => (
+						<rect
+							key={`${fragment.x}-${fragment.y}`}
+							x={fragment.x}
+							y={fragment.y}
+							width={fragment.width}
+							height={3}
+							fill="white"
+							opacity={fragment.opacity}
+						/>
+					))}
+				</svg>
+			</div>
+		</>
 	);
 }
 
-function BrokenChart({ inView }: { inView: boolean }) {
+function BrokenChart() {
 	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			animate={inView ? { opacity: 1 } : {}}
-			transition={{ delay: 0.6 }}
-			className="mt-12 flex justify-center lg:mt-16"
-		>
+		<div className="mt-16 flex justify-center lg:mt-20">
 			<div className="w-full max-w-md">
 				<div className="flex h-20 items-end justify-center gap-1">
 					{chartBars.map((height, index) => (
-						<motion.div
+						<div
 							key={`${height}-${index}`}
-							initial={{ height: 0, opacity: 0 }}
-							animate={inView ? { height: `${height}%`, opacity: index % 3 === 0 ? 0.3 : 0.6 } : {}}
-							transition={{ delay: 0.8 + index * 0.03, duration: 0.4 }}
 							className={`w-4 rounded-sm sm:w-6 ${
 								index % 3 === 0
 									? "border border-dashed border-primary-foreground/30 bg-primary-foreground/20"
 									: "bg-accent/60"
 							}`}
+							style={{ height: `${height}%`, opacity: index % 3 === 0 ? 0.3 : 0.6 }}
 						/>
 					))}
 				</div>
-				<p className="mt-4 text-center text-xs text-primary-foreground/40">
+				<p className="mt-4 text-center text-[11px] font-medium uppercase tracking-[0.24em] text-primary-foreground/45">
 					Dados fragmentados {"->"} Sistema unificado
 				</p>
 			</div>
-		</motion.div>
+		</div>
 	);
 }

@@ -28,7 +28,7 @@ export function DiagnosticForm() {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="space-y-5 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 p-6 backdrop-blur-sm lg:p-8"
+			className="space-y-5 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 p-6 lg:p-8"
 		>
 			<div className="grid gap-4 sm:grid-cols-2">
 				<Field id="name" label="Nome" placeholder="Seu nome" />
@@ -120,7 +120,7 @@ function SelectField({ id, label, options }: { id: string; label: string; option
 
 function SuccessState() {
 	return (
-		<div className="rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 p-8 text-center backdrop-blur-sm">
+		<div className="rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 p-8 text-center">
 			<div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-accent/20">
 				<Check size={32} className="text-accent" />
 			</div>
