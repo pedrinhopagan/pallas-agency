@@ -31,7 +31,7 @@ export function Hero() {
 							style={{ animationDelay: "180ms" }}
 						>
 							Estratégia Preditiva e{" "}
-							<span className="font-serif text-gradient-pallas text-[1.12em] font-normal italic leading-[1]">
+							<span className="text-gradient-pallas font-semibold leading-[1]">
 								Engenharia de Dados
 							</span>{" "}
 							para Aquisição de Alta Performance.

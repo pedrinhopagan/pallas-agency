@@ -38,7 +38,7 @@ function ModelsHeading() {
 
 			<h2 className="mb-6 text-balance text-3xl font-semibold leading-[1.1] text-foreground sm:text-4xl lg:text-[2.75rem]">
 				Escolha o modelo{" "}
-				<span className="font-serif text-[1.08em] font-normal italic text-pallas-purple">
+				<span className="font-semibold text-pallas-purple">
 					ideal
 				</span>{" "}
 				para o seu momento.
@@ -77,7 +77,7 @@ function ModelCard({ model }: { model: (typeof engagementModels)[number] }) {
 							<p className="mb-2 font-mono text-[0.7rem] uppercase tracking-[0.3em] text-accent">
 								{model.subtitle}
 							</p>
-							<h3 className="text-balance font-serif text-3xl font-normal leading-tight text-primary-foreground lg:text-4xl">
+							<h3 className="text-balance text-3xl font-semibold leading-tight text-primary-foreground lg:text-4xl">
 								{model.title}
 							</h3>
 						</div>
@@ -118,7 +118,7 @@ function ModelCard({ model }: { model: (typeof engagementModels)[number] }) {
 						<p className="mb-2 pl-3 font-mono text-[0.65rem] uppercase tracking-[0.3em] text-primary-foreground/50">
 							Entrega Principal
 						</p>
-						<p className="pl-3 font-serif text-lg italic leading-snug text-primary-foreground">
+						<p className="pl-3 text-base font-medium leading-snug text-primary-foreground">
 							{model.delivery}
 						</p>
 					</div>
@@ -148,7 +148,7 @@ function ModelCard({ model }: { model: (typeof engagementModels)[number] }) {
 						<p className="mb-2 font-mono text-[0.7rem] uppercase tracking-[0.3em] text-pallas-blue">
 							{model.subtitle}
 						</p>
-						<h3 className="text-balance font-serif text-3xl font-normal leading-tight text-foreground lg:text-4xl">
+						<h3 className="text-balance text-3xl font-semibold leading-tight text-foreground lg:text-4xl">
 							{model.title}
 						</h3>
 					</div>
@@ -186,7 +186,7 @@ function ModelCard({ model }: { model: (typeof engagementModels)[number] }) {
 					<p className="mb-2 pl-3 font-mono text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
 						Entrega Principal
 					</p>
-					<p className="pl-3 font-serif text-lg italic leading-snug text-foreground">
+					<p className="pl-3 text-base font-medium leading-snug text-foreground">
 						{model.delivery}
 					</p>
 				</div>

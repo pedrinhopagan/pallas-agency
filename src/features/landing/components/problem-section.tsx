@@ -42,7 +42,7 @@ export function ProblemSection() {
 
 					<h2 className="mb-6 text-balance text-3xl font-medium leading-[1.08] tracking-[-0.02em] text-primary-foreground sm:text-4xl lg:text-[2.8rem]">
 						O fim dos cookies e a{" "}
-						<span className="font-serif text-[1.1em] font-normal italic text-accent">
+						<span className="font-semibold text-accent">
 							crise de confiança
 						</span>{" "}
 						nos dados.
@@ -74,7 +74,7 @@ export function ProblemSection() {
 									<div className="flex size-10 items-center justify-center rounded-lg bg-accent/15 text-accent ring-1 ring-accent/20 transition-colors group-hover:bg-accent/25">
 										<Icon size={18} />
 									</div>
-									<span className="font-serif text-2xl italic leading-none text-primary-foreground/25 transition-colors group-hover:text-accent/60">
+									<span className="text-2xl font-semibold leading-none text-primary-foreground/25 transition-colors group-hover:text-accent/60">
 										{number}
 									</span>
 								</div>
