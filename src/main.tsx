@@ -1,35 +1,10 @@
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
-import { routeTree } from "./routeTree.gen.ts";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "./components/ui/sonner.tsx";
 
-export const queryClient = new QueryClient();
-
-const router = createRouter({
-  routeTree,
-  basepath: import.meta.env.BASE_URL,
-  context: { queryClient },
-  defaultPreload: false,
-  scrollRestoration: true,
-  defaultStructuralSharing: true,
-  defaultPreloadStaleTime: 0,
-});
-
-declare module "@tanstack/react-router" {
-  interface Register {
-    router: typeof router;
-  }
-}
+import { LandingPage } from "@/features/landing/landing-page";
 
 const rootElement = document.querySelector("#app");
 
 if (rootElement && !rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      <Toaster />
-    </QueryClientProvider>,
-  );
+	const root = ReactDOM.createRoot(rootElement);
+	root.render(<LandingPage />);
 }
